@@ -19,7 +19,7 @@ async def speech_to_text(audio_bytes: bytes = Body(...)):
 
 @app.get("/generate-response")
 async def get_response(prompt: str):
-    response = generate_response(prompt)
+    response = await generate_response(prompt)
     return {
         "response": response
     }
